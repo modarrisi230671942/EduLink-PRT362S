@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EduLink connects students and graduates with verified employers for jobs, internships and graduate programmes." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>EduLink — Student Career Portal</title>
+    <script>
+      // Apply the saved/OS colour theme before React loads, so dark-mode users never see a white flash
+      try {
+        var t = localStorage.getItem('edulink.theme');
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+      } catch (e) {}
+      // When the splash screen appeared; src/splash.js uses it to keep the splash up for a minimum time
+      window.__edulinkSplashStart = Date.now();
+    </script>
+    <!-- Splash screen styles are inlined so the splash paints before the JavaScript bundle has downloaded -->
+    <style>
+      #splash {
+        --splash-bg: #f8fafc;
+        --splash-text: #1e293b;
+        --splash-muted: #64748b;
+        --splash-primary: #4f46e5;
+        --splash-secondary: #0ea5e9;
+        --splash-track: #e2e8f0;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.16), transparent 45%),
+          radial-gradient(circle at 10% 85%, rgba(79, 70, 229, 0.14), transparent 45%),
+          var(--splash-bg);
+        color: var(--splash-text);
+        font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        text-align: center;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+      [data-bs-theme='dark'] #splash {
+        --splash-bg: #0b1120;
+        --splash-text: #e2e8f0;
+        --splash-muted: #94a3b8;
+        --splash-primary: #6366f1;
+        --splash-secondary: #38bdf8;
+        --splash-track: #273449;
+      }
+      #splash.splash-hide { opacity: 0; visibility: hidden; pointer-events: none; }
+      #splash .splash-inner { display: flex; flex-direction: column; align-items: center; }
+      #splash .splash-mark {
+        position: relative;
+        width: 88px;
+        height: 88px;
+        border-radius: 24px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+        color: #fff;
+        font-size: 2.9rem;
+        font-weight: 800;
+        box-shadow: 0 18px 40px -12px rgba(79, 70, 229, 0.55);
+        animation: splash-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      /* Soft ring that pulses out from the logo */
+      #splash .splash-mark::after {
+        content: '';
+        position: absolute;
+        inset: -6px;
+        border-radius: 30px;
+        border: 2px solid var(--splash-primary);
+        opacity: 0;
+        animation: splash-pulse 2s ease-out 0.7s infinite;
+      }
+      #splash .splash-name {
+        margin: 1.4rem 0 0.25rem;
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--splash-primary);
+        animation: splash-rise 0.6s ease-out 0.25s both;
+      }
+      [data-bs-theme='dark'] #splash .splash-name { color: #a5b4fc; }
+      #splash .splash-name span { color: var(--splash-secondary); }
+      #splash .splash-tagline {
+        margin: 0;
+        font-size: 1.05rem;
+        color: var(--splash-muted);
+        animation: splash-rise 0.6s ease-out 0.4s both;
+      }
+      #splash .splash-bar {
+        position: relative;
+        width: min(220px, 60vw);
+        height: 4px;
+        margin-top: 2rem;
+        border-radius: 999px;
+        overflow: hidden;
+        background: var(--splash-track);
+        animation: splash-rise 0.6s ease-out 0.55s both;
+      }
+      #splash .splash-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--splash-primary), var(--splash-secondary));
+        animation: splash-slide 1.3s ease-in-out infinite;
+      }
+      @keyframes splash-pop { from { opacity: 0; transform: scale(0.6) rotate(-8deg); } to { opacity: 1; transform: none; } }
+      @keyframes splash-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+      @keyframes splash-pulse { from { opacity: 0.6; transform: scale(1); } to { opacity: 0; transform: scale(1.35); } }
+      @keyframes splash-slide { from { left: -40%; } to { left: 100%; } }
+      @media (prefers-reduced-motion: reduce) {
+        #splash, #splash * , #splash *::before, #splash *::after { animation: none !important; transition: none !important; }
+        #splash .splash-bar::before { left: 30%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="splash" role="status" aria-live="polite" aria-label="Loading EduLink">
+      <div class="splash-inner">
+        <div class="splash-mark" aria-hidden="true">E</div>
+        <h1 class="splash-name">Edu<span>Link</span></h1>
+        <p class="splash-tagline">Student Career Portal</p>
+        <div class="splash-bar" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

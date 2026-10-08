@@ -1,0 +1,181 @@
+# Skills EduLink can recognise in an uploaded CV.
+# Format:  Canonical name | alias | alias ...
+# Matching is case-insensitive and on whole words. Lines starting with # are ignored.
+# Add skills here freely — no code changes needed.
+
+# ── Programming languages ──
+Java
+Python
+JavaScript | JS | ECMAScript
+TypeScript
+C# | C sharp | csharp
+C++ | cpp
+Golang
+Kotlin
+Swift
+PHP
+Ruby
+Scala
+Dart
+MATLAB
+Bash | shell scripting | shell script
+PowerShell
+SQL
+PL/SQL | PLSQL
+VBA
+
+# ── Web & mobile ──
+HTML/CSS | HTML | CSS | HTML5 | CSS3
+React | ReactJS | React.js
+Angular | AngularJS
+Vue | Vue.js | VueJS
+Next.js | NextJS
+# Avoid aliases that are ordinary English words (e.g. "node", "express", "spring", "go")
+Node.js | NodeJS
+Express.js | ExpressJS
+Bootstrap
+Tailwind CSS | Tailwind
+jQuery
+REST APIs | REST | RESTful | REST API
+GraphQL
+Flutter
+React Native
+Android
+iOS
+Laravel
+Django
+Flask
+FastAPI
+ASP.NET | dotnet
+Spring Boot | Spring Framework | Spring MVC
+Hibernate | JPA
+
+# ── Data & AI ──
+Machine Learning | ML
+Deep Learning
+Artificial Intelligence | AI
+Natural Language Processing | NLP
+Computer Vision
+Data Analysis | data analytics
+Data Science
+Statistics | statistical analysis
+Pandas
+NumPy
+scikit-learn | sklearn
+TensorFlow
+PyTorch
+Power BI | PowerBI
+Tableau
+Excel | Microsoft Excel | MS Excel
+Big Data
+Spark | Apache Spark
+Hadoop
+ETL
+Data Visualisation | data visualization
+
+# ── Databases ──
+MySQL
+PostgreSQL | Postgres
+Oracle
+SQL Server | MSSQL | Microsoft SQL Server
+MongoDB
+Redis
+SQLite
+Firebase
+Database Design | database modelling | data modelling | normalisation | normalization
+
+# ── Cloud, DevOps & infrastructure ──
+AWS | Amazon Web Services
+Azure | Microsoft Azure
+Google Cloud | GCP
+Docker
+Kubernetes | k8s
+Linux | Ubuntu
+Git | GitHub | GitLab
+CI/CD | continuous integration
+Jenkins
+Terraform
+Networking | computer networks | TCP/IP
+Cybersecurity | information security | cyber security
+Cloud Computing
+Virtualisation | virtualization | VMware
+Windows Server
+Active Directory
+
+# ── Software engineering practice ──
+Object-Oriented Programming | OOP | object oriented
+Data Structures
+Algorithms
+Testing | software testing | unit testing | QA
+JUnit
+Selenium
+Agile | Scrum | Kanban
+Jira
+UML
+System Analysis | systems analysis
+Software Design | design patterns
+Microservices
+API Design
+Technical Documentation | documentation
+
+# ── Design ──
+UI/UX | UX | UI design | user experience
+Figma
+Adobe Photoshop | Photoshop
+Adobe Illustrator | Illustrator
+Graphic Design
+
+# ── Engineering & science ──
+AutoCAD
+Revit
+SolidWorks
+Civil 3D
+Project Management | PMP
+Surveying
+Structural Analysis
+Electrical Engineering
+Mechanical Engineering
+Health and Safety | OHS
+
+# ── Business & finance ──
+Accounting
+Financial Analysis
+Bookkeeping
+Pastel | Sage Pastel
+SAP
+Marketing
+Digital Marketing
+Social Media
+SEO
+Sales
+Customer Service
+Business Analysis
+Human Resources | HR
+Supply Chain | logistics
+
+# ── Office tools ──
+Microsoft Office | MS Office
+Microsoft Word | MS Word
+PowerPoint | Microsoft PowerPoint
+
+# ── Professional skills ──
+Communication | communication skills
+Teamwork | team player
+Leadership
+Problem Solving | problem-solving
+Critical Thinking
+Time Management
+Attention to detail
+Presentation Skills | public speaking
+Research
+Mentoring
+
+# ── Languages ──
+English
+Afrikaans
+isiZulu | Zulu
+isiXhosa | Xhosa
+Sesotho
+Setswana
+French
+Portuguese
